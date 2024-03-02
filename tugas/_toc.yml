@@ -8,4 +8,5 @@ chapters:
 - file: tugas1
   sections :
     - file : Test
+    - file : Tugas pendahuluan
 - file: tugas2
