@@ -5,12 +5,12 @@ format: jb-book
 root: intro
 chapters:
 - file: markdown
-- file: Aljabar Linear
+- file: AljabarLinear
   sections :
     - file : Test
-    - file : Catatan AL
-    - file : Tugas AL
+    - file : CatatanAL
+    - file : TugasAL
 - file: Matrix\Matrix
   sections :
-    - file : Matrix\Catatan M
-    - file : Matrix\Tugas M
+    - file : Matrix\CatatanM
+    - file : Matrix\TugasM
