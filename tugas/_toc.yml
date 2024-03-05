@@ -10,7 +10,7 @@ chapters:
     - file : Test
     - file : CatatanAL
     - file : TugasAL
-- file: Matrix\Matrix
+- file: Matrix
   sections :
-    - file : Matrix\CatatanM
-    - file : Matrix\TugasM
+    - file : CatatanM
+    - file : TugasM
