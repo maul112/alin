@@ -2,15 +2,6 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: SPL
 chapters:
-- file: markdown
-- file: AljabarLinear
-  sections :
-    - file : Test
-    - file : CatatanAL
-    - file : TugasAL
-- file: Matrix
-  sections :
-    - file : CatatanM
-    - file : TugasM
+- file: AM
