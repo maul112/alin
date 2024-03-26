@@ -375,15 +375,20 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-matriks">Pengertian Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-dengan-numpy">Implementasi dengan numpy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-membuat-random-matriks-dengan-numpy">Cara membuat random matriks dengan numpy</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-cek-ukuran-matriks-menggunakan-python-dan-numpy">Cara cek ukuran matriks menggunakan python dan numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-matriks">Jenis-jenis Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-dengan-numpy">Implementasi dengan numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-membuat-random-matriks-dengan-numpy">Cara membuat random matriks dengan numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-cek-ukuran-matriks-menggunakan-python-dan-numpy">Cara cek ukuran matriks menggunakan python dan numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-transpose">Matriks Transpose</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi">Operasi</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menjumlahkan-dan-mengurangkan-dua-buah-matriks-dengan-python-dan-numpy">Cara menjumlahkan dan mengurangkan dua buah matriks dengan python dan numpy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-mengalikan-dua-buah-matriks-dengan-python-biasa-dan-numpy">Cara mengalikan dua buah matriks dengan python biasa dan numpy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-mencari-determinan-matriks-menggunakan-python">Cara mencari determinan matriks menggunakan python</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi">Referensi</a></li>
 </ul>
             </nav>
         </div>
@@ -399,37 +404,180 @@ document.write(`
 <h1>Aljabar Matrix<a class="headerlink" href="#aljabar-matrix" title="Link to this heading">#</a></h1>
 <section id="pengertian-matriks">
 <h2>Pengertian Matriks<a class="headerlink" href="#pengertian-matriks" title="Link to this heading">#</a></h2>
-<ul>
-<li><p>Matrix adalah larik bilangan dua dimensi. Komputas matriks menggunakan numoy, dengan menggunakan array
-$<span class="math notranslate nohighlight">\(
+<ul class="simple">
+<li><p>Matrix adalah kumpulan bilangan maupun bilangan kompleks yang tersusun dalam bentuk beberapa baris dan beberapa kolom yang dibungkus dengan kurung () atau kurung [].</p></li>
+</ul>
+<p>Contoh bentuk matriks :</p>
+<p><span class="math notranslate nohighlight">\(
 A =\begin{bmatrix}
 1 &amp; 3\\
 2 &amp; 1
 \end{bmatrix}
-\)</span>$</p></li>
-<li><p>Dimensi atau ukuran matriks ditentukan dengan jumlah baris dan kolom</p></li>
-<li><p>Jumlah baris biasanya dicantumkan terlebih dahulu</p>
+\)</span></p>
+<p>Matriks mempunyai ukuran yang ditentukan oleh jumlah baris dan jumlah kolom. Dalam notasi umum matriks, nama dari sebuah matriks biasanya berupa sebuah huruf kapital, jumlah baris biasanya dicantumkan terlebih dahulu.</p>
 <p>Maksudnya :</p>
 <p><span class="math notranslate nohighlight">\(A_{ij}\)</span></p>
-<p>Matrik diatas mempunyai sebanyak i baris dan sebanyak j kolom</p>
-</li>
-<li><p>Matriks yang hanya memiliki 1 kolom, seperti D, bisa disebut vektor</p>
-<p>Contoh :
-$<span class="math notranslate nohighlight">\(
-D = \begin{bmatrix}
-1\\
-2
-\end{bmatrix}
-\)</span>$</p>
-</li>
-<li><p>Menggunakan huruf besar untuk memberi nama matriks</p></li>
-<li><p>Elemen matriks dinyatakan dengan huruf kecil dengan subskrip untuk menunjukkan posisi entri dalam matriks.</p>
+<p>Matrik diatas mempunyai sebanyak i baris dan sebanyak j kolom.</p>
+<p>Elemen matriks dinyatakan dengan huruf kecil dengan subskrip baris dan kolom untuk menunjukkan posisi sebuah elemen dalam matriks.
+Contoh <span class="math notranslate nohighlight">\(b_{12}\)</span> mengacu pada baris pertama dan kolom kedua matriks B.
+Secara umum, kita mungkin menggunakan variabel di subskrip, seperti <span class="math notranslate nohighlight">\(a_{ij}\)</span> artinya elemen dari matriks <span class="math notranslate nohighlight">\(A\)</span> pada baris <span class="math notranslate nohighlight">\(i\)</span> dan kolom <span class="math notranslate nohighlight">\(j\)</span>.</p>
+</section>
+<section id="jenis-jenis-matriks">
+<h2>Jenis-jenis Matriks<a class="headerlink" href="#jenis-jenis-matriks" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Matriks Baris</p></li>
+</ol>
+<p>Matriks baris adalah matriks yang terdiri dari hanya satu baris saja.</p>
 <ul class="simple">
-<li><p>Contoh <span class="math notranslate nohighlight">\(b_{12}\)</span> mengacu pada baris pertama dan kolom kedua matriks B.</p></li>
-<li><p>Secara umum, kita mungkin menggunakan variabel di subskrip, seperti <span class="math notranslate nohighlight">\(a_{ij}\)</span> artinya elemen dari a baris i dan kolom j.</p></li>
+<li><p>Contoh :</p></li>
 </ul>
-</li>
+<p><span class="math notranslate nohighlight">\(
+A = \begin{bmatrix}
+1 &amp; 2 &amp; 3 &amp; 4
+\end{bmatrix}
+\)</span></p>
+<ol class="arabic simple" start="2">
+<li><p>Matriks Kolom</p></li>
+</ol>
+<p>Matriks kolom adalah matriks yang terdiri dari hanya satu kolom saja.</p>
+<ul class="simple">
+<li><p>Contoh :</p></li>
 </ul>
+<p><span class="math notranslate nohighlight">\(
+X = \begin{bmatrix}
+1\\
+2\\
+3
+\end{bmatrix}
+\)</span></p>
+<p>Biasanya matriks ini disebut juga dengan vektor.</p>
+<ol class="arabic simple" start="3">
+<li><p>Matriks nol</p></li>
+</ol>
+<p>Matriks nol adalah matriks yang semua elemen didalam matriks tersebut semuanya bernilai 0.</p>
+<ul class="simple">
+<li><p>Contoh :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+M = \begin{bmatrix}
+0 &amp; 0\\
+0 &amp; 0
+\end{bmatrix}
+\)</span></p>
+<ol class="arabic simple" start="4">
+<li><p>Matriks Persegi</p></li>
+</ol>
+<p>Matriks persegi adalah matriks yang dimana jumlah barisnya sama dengan jumlah kolomnya</p>
+<ul class="simple">
+<li><p>Contoh :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+B = \begin{bmatrix}
+1 &amp; 2\\
+3 &amp; 4
+\end{bmatrix}
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+C = \begin{bmatrix}
+1 &amp; 2 &amp; 3\\
+3 &amp; 4 &amp; 5\\
+5 &amp; 6 &amp; 7
+\end{bmatrix}
+\)</span></p>
+<ol class="arabic simple" start="5">
+<li><p>Matriks Segitiga
+Matriks segitiga ada dua, yaitu segitiga atas dan segitiga bawah. Matriks segitiga atas adalah matriks dimana elemen-elemen yang berada dibawah diagonal utama bernilai nol dan sebaliknya.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Contoh segitiga atas :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+E = \begin{bmatrix}
+9 &amp; 8 &amp; 7\\
+0 &amp; 5 &amp; 4\\
+0 &amp; 0 &amp; 1
+\end{bmatrix}
+\)</span></p>
+<ul class="simple">
+<li><p>Contoh segitiga bawah :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+E = \begin{bmatrix}
+9 &amp; 0 &amp; 0\\
+6 &amp; 5 &amp; 0\\
+3 &amp; 2 &amp; 1
+\end{bmatrix}
+\)</span></p>
+<ol class="arabic simple" start="6">
+<li><p>Matriks diagonal</p></li>
+</ol>
+<p>Matriks diagonal adalah matriks dengan elemen selain pada diagonalnya bernilai 0. Diagonal dalam matriks diagonal ada dua yaitu diagonal utama dan sekunder. Jika elemen yang ada pada diagonalnya bernilai sama, maka matriks itu disebut matriks skalar</p>
+<ul class="simple">
+<li><p>Contoh diagonal utama :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+P = \begin{bmatrix}
+1 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 3
+\end{bmatrix}
+\)</span></p>
+<ul class="simple">
+<li><p>Contoh diagonal sekunder :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+Q = \begin{bmatrix}
+0 &amp; 0 &amp; 1\\
+0 &amp; 2 &amp; 0\\
+3 &amp; 0 &amp; 0
+\end{bmatrix}
+\)</span></p>
+<ul class="simple">
+<li><p>Contoh matriks skalar :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+R = \begin{bmatrix}
+2 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 0\\
+0 &amp; 0 &amp; 2
+\end{bmatrix}
+\)</span></p>
+<ol class="arabic simple" start="7">
+<li><p>Matriks datar dan tegak</p></li>
+</ol>
+<p>Matriks datar adalah matriks dengan jumlah kolom lebih besar dari jumlah barisnya. Sementara matriks tegak adalah matriks dengan jumlah baris lebih besar dari jumlah kolomnya.</p>
+<ul class="simple">
+<li><p>Contoh matriks datar :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+Y = \begin{bmatrix}
+1 &amp; 2 &amp; 3\\
+4 &amp; 5 &amp; 6
+\end{bmatrix}
+\)</span></p>
+<ul class="simple">
+<li><p>Contoh matriks tegak :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+Z = \begin{bmatrix}
+1 &amp; 2\\
+3 &amp; 4\\
+5 &amp; 6
+\end{bmatrix}
+\)</span></p>
+<ol class="arabic simple" start="8">
+<li><p>Matriks identitas</p></li>
+</ol>
+<p>Matriks identitas merupakan matriks dengan elemen hanya bernilai 0 atau 1.</p>
+<ul class="simple">
+<li><p>Contoh :</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+O = \begin{bmatrix}
+1 &amp; 0\\
+0 &amp; 1
+\end{bmatrix}
+\)</span></p>
 </section>
 <section id="implementasi-dengan-numpy">
 <h2>Implementasi dengan numpy<a class="headerlink" href="#implementasi-dengan-numpy" title="Link to this heading">#</a></h2>
@@ -465,8 +613,9 @@ D =
 </div>
 </div>
 </div>
+</section>
 <section id="cara-membuat-random-matriks-dengan-numpy">
-<h3>Cara membuat random matriks dengan numpy<a class="headerlink" href="#cara-membuat-random-matriks-dengan-numpy" title="Link to this heading">#</a></h3>
+<h2>Cara membuat random matriks dengan numpy<a class="headerlink" href="#cara-membuat-random-matriks-dengan-numpy" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
@@ -487,15 +636,16 @@ D =
 <p>Perlu diingat sebelum menjumlahkan, mengurangkan, atau mmengalikan kedua buah matriks, ukuran dari kedua matriks tersebut harus sama.</p>
 <p>Notasi ukuran matriks sebagai berikut :</p>
 <p><span class="math notranslate nohighlight">\(A_{ij}\)</span> artinya matriks <span class="math notranslate nohighlight">\(A\)</span> mempunyai i baris dan j kolom</p>
+</section>
 <section id="cara-cek-ukuran-matriks-menggunakan-python-dan-numpy">
-<h4>Cara cek ukuran matriks menggunakan python dan numpy<a class="headerlink" href="#cara-cek-ukuran-matriks-menggunakan-python-dan-numpy" title="Link to this heading">#</a></h4>
+<h2>Cara cek ukuran matriks menggunakan python dan numpy<a class="headerlink" href="#cara-cek-ukuran-matriks-menggunakan-python-dan-numpy" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Python</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">panjang_matriks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ukuran matriks A adalah = </span><span class="si">{</span><span class="n">panjang_matriks</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ukuran_matriks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ukuran matriks A adalah = </span><span class="si">{</span><span class="n">ukuran_matriks</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -521,8 +671,67 @@ D =
 </div>
 </div>
 <p>Berarti matriks A diatas mempunyai 2 baris dan 2 kolom.</p>
+<p>Setelah kita tau beberapa implementasi numpy pada matriks, ada satu jenis matriks lagi yaitu matriks transpose.</p>
+<section id="matriks-transpose">
+<h3>Matriks Transpose<a class="headerlink" href="#matriks-transpose" title="Link to this heading">#</a></h3>
+<p>Matriks transpose adalah transformasi atau perubahan pada elemen-elemen matriks yang awalnya merupakan baris menjadi kolom dan sebaliknya. Matriks dikatakan matriks simetris jika elemen-elemen dari sebuah matriks sama dengan hasil transpose-nya. Sebuah matriks disebut matriks simetri miring pada saat nilai elemennya selain diagonal utama nilainya berlawanan. Notasi matriks transpose adalah <span class="math notranslate nohighlight">\(A^T\)</span>.</p>
+<p>Cara transpose sebuah matriks menggunakan python</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;B = </span><span class="se">\n</span><span class="si">{</span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">transpose</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">hasil</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+            <span class="n">temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">hasil</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hasil</span>
+
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">transpose</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bt = </span><span class="se">\n</span><span class="si">{</span><span class="n">hasil</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B = 
+[[ 3  0  4]
+ [-1 -2  1]]
+Bt = 
+[[ 3 -1]
+ [ 0 -2]
+ [ 4  1]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cara transpose matriks menggunakan numpy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;B = </span><span class="se">\n</span><span class="si">{</span><span class="n">B</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">trans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hasil = </span><span class="se">\n</span><span class="si">{</span><span class="n">trans</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>B = 
+[[ 3  0  4]
+ [-1 -2  1]]
+Hasil = 
+[[ 3 -1]
+ [ 0 -2]
+ [ 4  1]]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
+<section id="operasi">
+<h2>Operasi<a class="headerlink" href="#operasi" title="Link to this heading">#</a></h2>
 <section id="cara-menjumlahkan-dan-mengurangkan-dua-buah-matriks-dengan-python-dan-numpy">
 <h3>Cara menjumlahkan dan mengurangkan dua buah matriks dengan python dan numpy<a class="headerlink" href="#cara-menjumlahkan-dan-mengurangkan-dua-buah-matriks-dengan-python-dan-numpy" title="Link to this heading">#</a></h3>
 <p>Penjumlahan dua matriks adalah dengan menjumlahkan tiap elemen dari kedua matriks tersebut sesuai dengan posisinya.</p>
@@ -622,19 +831,23 @@ A + C = \begin{bmatrix}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">perkalian</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">C</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A = </span><span class="se">\n</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C = </span><span class="se">\n</span><span class="si">{</span><span class="n">C</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">perkalian</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">C</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;hasil = </span><span class="se">\n</span><span class="si">{</span><span class="n">hasil</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A = 
+[[1 3]
  [2 1]]
+C = 
 [[-2  1]
  [ 4  1]]
-[[10, 4], [0, 3]]
+hasil = 
+[[10  4]
+ [ 0  3]]
 </pre></div>
 </div>
 </div>
@@ -655,6 +868,59 @@ A + C = \begin{bmatrix}
 </div>
 </div>
 </section>
+<section id="cara-mencari-determinan-matriks-menggunakan-python">
+<h3>Cara mencari determinan matriks menggunakan python<a class="headerlink" href="#cara-mencari-determinan-matriks-menggunakan-python" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="k">def</span> <span class="nf">det</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="n">bantu</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+            <span class="n">bantu</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+    <span class="n">kanan</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">kiri</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+        <span class="n">kanan1</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">kiri1</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+            <span class="c1"># print(bantu[j][len(a)-1-j+i])</span>
+            <span class="c1"># print(bantu[j][j+i])</span>
+            <span class="n">kanan1</span> <span class="o">*=</span> <span class="n">bantu</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">kiri1</span> <span class="o">*=</span> <span class="n">bantu</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">j</span><span class="o">+</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">kanan</span> <span class="o">+=</span> <span class="n">kanan1</span>
+        <span class="c1"># print(kiri1)</span>
+        <span class="n">kiri</span> <span class="o">+=</span> <span class="n">kiri1</span>
+    <span class="k">return</span> <span class="n">kanan</span> <span class="o">-</span> <span class="n">kiri</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">det</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-17
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="referensi">
+<h2>Referensi<a class="headerlink" href="#referensi" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://fti.ars.ac.id/blog/content/matriks--jenis-jenis-matriks#:~:text=Matriks%20adalah%20suatu%20susunan%20bilangan,sehingga%20membentuk%20jajaran%20persegi%20panjang.&amp;amp;text=Suatu%20matriks%20diberi%20nama%20dengan,anggotanya%20dinyatakan%20dengan%20huruf%20kecil">https://fti.ars.ac.id/blog/content/matriks–jenis-jenis-matriks#:~:text=Matriks adalah suatu susunan bilangan,sehingga membentuk jajaran persegi panjang.&amp;text=Suatu matriks diberi nama dengan,anggotanya dinyatakan dengan huruf kecil</a>.</p></li>
+<li><p><a class="reference external" href="https://www.ruangguru.com/blog/mengenal-matriks-dalam-matematika-pengertian-jenis-dan-transpose">https://www.ruangguru.com/blog/mengenal-matriks-dalam-matematika-pengertian-jenis-dan-transpose</a></p></li>
+<li><p><a class="reference external" href="https://tetrikmatriks.wordpress.com/2017/10/21/pengertian-dan-jenis-matriks/">https://tetrikmatriks.wordpress.com/2017/10/21/pengertian-dan-jenis-matriks/</a></p></li>
+<li><p><a class="reference external" href="https://id.wikipedia.org/wiki/Matriks_diagonal">https://id.wikipedia.org/wiki/Matriks_diagonal</a></p></li>
+<li><p><a class="reference external" href="https://www.digitalocean.com/community/tutorials/numpy-matrix-transpose-array">https://www.digitalocean.com/community/tutorials/numpy-matrix-transpose-array</a></p></li>
+<li><p><a class="reference external" href="https://www.ruangguru.com/blog/cara-mencari-determinan-dan-invers-matriks">https://www.ruangguru.com/blog/cara-mencari-determinan-dan-invers-matriks</a></p></li>
+<li><p><a class="reference external" href="https://byjus.com/maths/inverse-matrix/">https://byjus.com/maths/inverse-matrix/</a></p></li>
+<li><p><a class="reference external" href="https://kumparan.com/berita-update/cara-mencari-adjoin-matriks-3x3-dan-contohnya-21KH3nq8dQW">https://kumparan.com/berita-update/cara-mencari-adjoin-matriks-3x3-dan-contohnya-21KH3nq8dQW</a></p></li>
+<li><p><a class="reference external" href="https://akupintar.id/info-pintar/-/blogs/matriks-pengertian-operasi-determinan-invers-dan-contoh-soal#:~:text=Determinan%20suatu%20matriks%20didefinisikan%20sebagai,A">https://akupintar.id/info-pintar/-/blogs/matriks-pengertian-operasi-determinan-invers-dan-contoh-soal#:~:text=Determinan suatu matriks didefinisikan sebagai,A</a>)%20atau%20%7CA%7C</p></li>
+</ul>
 </section>
 </section>
 
@@ -714,15 +980,20 @@ A + C = \begin{bmatrix}
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian-matriks">Pengertian Matriks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-dengan-numpy">Implementasi dengan numpy</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-membuat-random-matriks-dengan-numpy">Cara membuat random matriks dengan numpy</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-cek-ukuran-matriks-menggunakan-python-dan-numpy">Cara cek ukuran matriks menggunakan python dan numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jenis-jenis-matriks">Jenis-jenis Matriks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi-dengan-numpy">Implementasi dengan numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-membuat-random-matriks-dengan-numpy">Cara membuat random matriks dengan numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-cek-ukuran-matriks-menggunakan-python-dan-numpy">Cara cek ukuran matriks menggunakan python dan numpy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-transpose">Matriks Transpose</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operasi">Operasi</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menjumlahkan-dan-mengurangkan-dua-buah-matriks-dengan-python-dan-numpy">Cara menjumlahkan dan mengurangkan dua buah matriks dengan python dan numpy</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-mengalikan-dua-buah-matriks-dengan-python-biasa-dan-numpy">Cara mengalikan dua buah matriks dengan python biasa dan numpy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-mencari-determinan-matriks-menggunakan-python">Cara mencari determinan matriks menggunakan python</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referensi">Referensi</a></li>
 </ul>
   </nav></div>
 
